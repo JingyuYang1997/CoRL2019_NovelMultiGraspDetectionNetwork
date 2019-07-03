@@ -17,7 +17,7 @@ if not os.path.exists(save_path):
     os.mkdir(save_path)
 
 net = HourGlass(Bottleneck,num_classes=10)
-net.load_state_dict(torch.load('checkpoints/ep_40.pt'))
+net.load_state_dict(torch.load('checkpoints/ep_50.pt'))
 net.cpu()
 image_files = glob.glob('./MultiGraspDataset/valid/{}/src_images/*.png'.format(args.mode))
 for image_file in image_files:
@@ -39,7 +39,7 @@ for image_file in image_files:
     plt.imshow(image[...,::-1])
     plt.subplot(122)
     plt.imshow(hm_overall)
-    plt.savefig('./MultiGraspDataset/test_images/compare/{}_cp.png'.format(image_index))
+    plt.savefig('./MultiGraspDataset/valid/{}/compare/{}_cp.png'.format(args.mode,image_index))
     plt.close()
 
 
