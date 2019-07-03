@@ -23,13 +23,10 @@ import torch
 
 opt = Options()
 
-if not os.path.exists('./show/'):
-    os.mkdir('./show/')
 class RealEnv(object):
 
     def __init__(self, image_topic='/kinect2/hd/image_color_rect', depth_topic='/kinect2/hd/image_depth_rect'):
-
-        rospy.init_node('BinPickingEnv')
+        rospy.init_node('RealExp')
         self.image_topic = image_topic
         self.depth_topic = depth_topic
 
@@ -64,10 +61,8 @@ class RealEnv(object):
 
     def get_image(self, msg):
         if not self.get_image_once:
-            # if True:
             bridge = CvBridge()
             img = bridge.imgmsg_to_cv2(msg)
-            # print("get color image shape {}".format(img.shape))
             roi_cor = np.load('roi_cor.npy')
             img_src = img.copy()[roi_cor[0, 1]:roi_cor[1, 1], roi_cor[0, 0]:roi_cor[1, 0]]
             color_grasp = img_src[:, :int(img_src.shape[1] / 2)-45, :]
@@ -109,7 +104,6 @@ class RealEnv(object):
         image = self.image.copy()
         self.image_show = vis_gcfs(gcfs,image)
         self.get_image_once = True
-        # time.sleep(10)
         for gcf in gcfs:
             x = gcf[0]
             y = gcf[1]
