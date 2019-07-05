@@ -10,7 +10,7 @@
 
 ## Introduction
 
-Here is our [paper](https://xxx) and here is the related [video](https://youtu.be/FLucB-Bs-nQ)
+Here is our [paper](https://xxx) and here is the related [video](https://youtu.be/DEe4F06d5v4)
 
 We focus on multiply objects scene (like the image below) where detecting multiple grasping configurations from a **RGB** image simultaneously is more efficient and adaptable in various environments compared to single grasp detection.
 
