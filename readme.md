@@ -49,7 +49,7 @@ We focus on multiply objects scene (like the image below) where detecting multip
 
 ​		We also offer a [multi-grasp detection dataset](https://drive.google.com/open?id=1aOGjQqel79MugmAfY68wnnQvua7LsI2D) which contains more than 2000 images with up to 14000 qualified grasping annotations for 22 different objects, which you can use to train or test. Do data augmentation if you would like, which is convenient because the input and output are both images. In our test, we didn't do that.
 
-<div align=center><img src="./figures/dataset.png">
+<div align=center><img src="./figures/dataset_all.png">
 </div>
 
 
